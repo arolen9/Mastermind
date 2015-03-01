@@ -121,7 +121,6 @@ function getUserAnswer()
 
 /* function to print next guess to HTML - this will be replaced with better GUI*/
 function printGuess () {
-		console.log("ABOUT TO PRINT guess:" + guess);
 
 		var output = "<h1> My guess: " + guess + " </h1>";
 		output = output + "<br> How many did I get correct?<br>"
@@ -135,8 +134,8 @@ function printGuess () {
 function printProcessedGuess () {
 		
 		var output = "<h2> My guess: " + guess + " </h2>";
-		output = output + "<br> Colors correct: " + answer[1] + "<br>";
-		output = output + "<br> Positions correct: " + answer[0] + "<br>";
+		output = output + "<br> Colors correct: " + answer[0] + "<br>";
+		output = output + "<br> Positions correct: " + answer[1] + "<br>";
 		 $('#old_interaction').append(output);
 		 //console.log("check if div id=interaction changed....");
 }
@@ -405,4 +404,22 @@ function compareArrays (arr1, arr2) {
 
 	}
 	return 1;
+}
+
+function comparePositions(arr1, arr2) {
+	var count = 0;
+
+	for (var i = 0; i < arr1.length; i++ )
+	{
+		//console.log ("arr: " + arr + ", count: " + count + ", elem: " + elem);
+
+		if (arr1[i] == arr2[i])
+		{
+			
+			count++;
+			
+		}
+	}
+	return count;
+
 }
